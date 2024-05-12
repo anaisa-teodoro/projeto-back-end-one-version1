@@ -1,0 +1,30 @@
+### Node ### 
+# Para esse projeto-back-end-one, inseri os comandos sugerido em Node do https://www.toptal.com/developers/gitignore
+# Logs
+logs
+*.log
+# Dependency directories
+node_modules/
+jspm_packages/
+/node modules
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
