@@ -8,7 +8,7 @@
 
 Clone o projeto no link:
 
-`git clone https://github.com/anaisa-teodoro/projeto-back-end-one.git`
+`git clone https://github.com/anaisa-teodoro/projeto-back-end-one-version1`
 
 Linux | Windows
 <p>Salva a versão do Node a ser usada no projeto</p>
