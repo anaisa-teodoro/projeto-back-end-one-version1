@@ -20,7 +20,7 @@ async function plataforma(req, res) {
       res.status(400);
       throw new Error("Requisição com dados inválidos");
     }
-    // salvar localidade em si, se tudo estiver ok tmb a relação com o deposito onde esta a quantidade , se o localidade ja existir no deposito a quantidade sera atualizada se não existir sera criado um novo registro por que nossa BD tem relação de muitos para muitos entre localidades e depósitos na tabela localidades_depósitos e nao podemos ter dois localidades iguais com diferentes valores em  suas propriedades.
+    
     await salvarLocalidade(body, quantidade, usuario_id, req, res);
   } catch (error) {
     return res.json(error.message);
@@ -41,7 +41,7 @@ async function update(req, res) {
       res.status(400);
       throw new Error("Requisição com dados inválidos");
     }
-    // validar que o body, o req.payload e req.params tenha os campos necessários para atualizar um localidade e/o a quantidade num deposito e logo atualizar dependedo da requisição
+    // validar que o body, o req.payload e req.params tenha os campos necessários para atualizar um localidade e/o a quantidade num local e logo atualizar dependedo da requisição
     await atualizarLocalidade(usuario_id, localidade_id, quantidade, req, res);
   } catch (error) {
     return res.json(error.message);
@@ -89,7 +89,7 @@ async function deleteId(req, res) {
     }
     // validar que usuário este ativo na bd pode ter sido desativado por um admin e ter um token valido ainda
     await usuarioEstaAtivo(usuario_id, res);
-    // deletamos um localidade por id so se ele nao estiver relacionado a nenhum deposito
+    // deletamos um localidade por id so se ele nao estiver relacionado a nenhum local
     await deletarLocalidade(req, res);
 
   } catch (error) {

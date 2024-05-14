@@ -9,7 +9,7 @@ const { estaNaBD } = require("../libs/validators");
 async function validarBody(body) {
   const {
     nome_localidade,
-    nome_laboratorio,
+    descricao,
     dosagem,
     unidade_dosagem,
     tipo,

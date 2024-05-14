@@ -75,8 +75,7 @@ module.exports = {
       const novosDados = {};
       if (nome) novosDados.nome = nome;     
       if (sexo) novosDados.sexo = sexo;
-      if (telefone) novosDados.telefone = telefone;
-      //verificar se  tem algum dado para atualizar
+        //verificar se  tem algum dado para atualizar
       if (Object.keys(novosDados).length === 0) {
         res.status(400);
         throw new Error("Nenhum dado valido para atualizar foi recebido");

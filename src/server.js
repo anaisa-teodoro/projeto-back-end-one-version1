@@ -6,8 +6,7 @@ const morgan = require("morgan");
 config();
 //rotas
 const rotas = require('./routes/index');
-class Server {
-  // constructor de classe
+class Server { 
   constructor(app = express()) {
     app.use(morgan('dev'));
     app.use(cors(
@@ -36,7 +35,7 @@ class Server {
   // start server
   async initializeServer(app) {
     const PORT = process.env.NODE_PORT || 3000;
-    app.listen(PORT, () => console.log(`Servidor executando em http://localhost:${port}/`));
+    app.listen(PORT, () => console.log(`Servidor executando em http://localhost:${PORT}/`));
   }
 
 }

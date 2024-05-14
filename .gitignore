@@ -1,5 +1,5 @@
-### Node ### 
-# Para esse projeto-back-end-one, inseri os comandos sugerido em Node do https://www.toptal.com/developers/gitignore
+### Projeto Node ### 
+# Para esse projeto-back-end-one, inseri os comandos sugeridos em Node no https://www.toptal.com/developers/gitignore
 # Logs
 logs
 *.log

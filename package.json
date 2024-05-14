@@ -33,6 +33,7 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2",
     "pg": "^8.11.5",
     "pg-connection-string": "^2.6.4",
     "sequelize": "^6.37.3",

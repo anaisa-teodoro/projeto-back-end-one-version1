@@ -4,7 +4,7 @@ const {
   filtroUpdate,
   filtroStatus,
   filtroPlataforma,
-} = require("../libs/Locais.lib");
+} = require("../libs/locais.lib");
 const { estaNaBD, usuarioEstaAtivo } = require("../libs/validators");
 
 module.exports = {
@@ -24,20 +24,15 @@ module.exports = {
         res.status(400);
         throw new Error("Requisição com dados inválidos");
       }
-      //cnpj esta na db ?
-      if (await estaNaBD(Locais, "cnpj", body.cnpj)) {
+      //cpf esta na db ?
+      if (await estaNaBD(Locais, "cpf", body.cpf)) {
         res.status(409);
-        throw new Error("CNPJ já cadastrado");
+        throw new Error("CPF já cadastrado");
       }
       //email esta na db ?
       if (await estaNaBD(Locais, "email", body.email)) {
         res.status(409);
         throw new Error("Email já cadastrado");
-      }
-      // razao social esta na db ?
-      if (await estaNaBD(Locais, "nome_local", body.nome_local)) {
-        res.status(409);
-        throw new Error("Razão Social já cadastrada");
       }
       //nome fantasia esta na db ?
       if (await estaNaBD(Locais, "nome_local", body.nome_local)) {
@@ -157,7 +152,7 @@ module.exports = {
       //  retorna um objeto com o nome Locais e o array de todos os Locais
       status
         ? res.json({
-          ["locais" + String(status).toLocaleLowerCase()]: locais,
+          ["locais" + String(status).toLocaleLowerCase()]: Locais,
         })
         : res.json({ Locais });
     } catch (error) {
@@ -183,8 +178,7 @@ module.exports = {
           "id",
           "status",
           "nome_local",
-          "nome_local",
-          "cnpj",
+          "cpf",
           "email",
           "celular",
           "telefone",
@@ -195,8 +189,8 @@ module.exports = {
           "logradouro",
           "numero",
           "complemento",
-          "latitude",
-          "longitude",
+          "lat",
+          "lon",
         ],
         include: {
           association: "usuario",

@@ -6,7 +6,7 @@ const LocalidadeLocal = require("./LocalidadeLocal");
 const Usuarios = require("./Usuarios");
 
 const Locais = connection.define(
-  "locais",
+  "local",
   {
     usuario_id: {
       type: Sequelize.INTEGER,
@@ -14,16 +14,16 @@ const Locais = connection.define(
     nome_local: {
       type: Sequelize.STRING,
     },
-    cnpj: {
+    cpf: {
       type: Sequelize.STRING,
       validate: {
         len: {
           args: [14, 14],
-          msg: "O CNPJ deve ter 14 caracteres",
+          msg: "O CPF deve ter 14 caracteres",
         },
         isNumeric: {
           args: true,
-          msg: "O CNPJ deve conter apenas números e não deve conter pontos ou traços",
+          msg: "O CPF deve conter apenas números e não deve conter pontos ou traços",
         },
 
       },
@@ -61,21 +61,21 @@ const Locais = connection.define(
     cidade: { type: Sequelize.STRING },
     estado: { type: Sequelize.STRING},
     complemento: { type: Sequelize.STRING },
-    latitude: {
+    lat: {
       type: Sequelize.STRING,
       validate: {
         isNumeric: {
           args: true,
-          msg: "Latitude deve ser numérico, exemplo : 12.3456"
+          msg: "Latitude deve ser numérico, exemplo : -27.6019"
         }
       }
     },
-    longitude: {
+    lon: {
       type: Sequelize.STRING,
       validate: {
         isNumeric: {
           args: true,
-          msg: "Longitude deve ser numérico, exemplo : 12.3456"
+          msg: "Longitude deve ser numérico, exemplo : -48.4703"
         }
       }
     },
