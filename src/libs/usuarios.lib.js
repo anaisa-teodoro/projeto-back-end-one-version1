@@ -26,8 +26,7 @@ async function filtroPlataforma(body) {
     nome,  
     sexo,
     data_nascimento,
-    cpf,
-    telefone,
+    cpf,  
     email,
     senha,
   } = body;
@@ -50,10 +49,6 @@ async function filtroPlataforma(body) {
   if (senha) {
     novos_dados.senha = senha;
   }
-  if (telefone) {
-    novos_dados.telefone = telefone;
-  }
-
 
   return novos_dados;
 }
@@ -75,7 +70,7 @@ async function gerarToken(Usuarios, body, res) {
   //validar se o usuario esta ativo na base de dados
   if (user.status === "inativo") {
     res.status(401);
-    throw new Error("Seu usuario esta inativo");
+    throw new Error("Seu usuário está inativo");
   }
   //validar senha
   if (body.senha === user.senha) {

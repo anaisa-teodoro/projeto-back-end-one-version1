@@ -71,7 +71,7 @@ module.exports = {
         throw new Error("Sem permissão para atualizar este usuário");
       }
       //apenas atualizar os dados que forem enviados e so permitir atualizar nome, sexo e telefone
-      const { nome, sexo, telefone } = body;
+      const { nome, sexo} = body;
       const novosDados = {};
       if (nome) novosDados.nome = nome;     
       if (sexo) novosDados.sexo = sexo;
@@ -206,8 +206,7 @@ module.exports = {
           "nome",        
           "sexo",
           "data_nascimento",
-          "email",
-          "telefone",
+          "email",          
           "status",
           "created_at",
           "updated_at",

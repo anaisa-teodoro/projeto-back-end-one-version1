@@ -13,7 +13,7 @@ module.exports = {
       }
       next();
     } catch (error) {
-      return res.status(401).send("Token inválido");
+      return res.status(401).send("Token inválido!");
     }
   },
 };

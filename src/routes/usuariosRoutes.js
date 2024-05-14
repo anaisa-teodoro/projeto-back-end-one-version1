@@ -7,7 +7,9 @@ const {
   senha,
   index,
 } = require("../controllers/usuarios.controllers");
-const { validarToken } = require("../middlewares /auth")
+
+
+const { validarToken } = require("../middlewares/auth");
 
 //endpoints publicos
 usuariosRoutes.post("/api/usuarios", plataforma);

@@ -1,8 +1,8 @@
 const {config} = require('dotenv');
 config();
-const parse = require('pg-connection-string').parse;
-const configDB = parse(process.env.DATABASE_URL);
-
+//const parse = require('pg-connection-string');
+//const configDB = parse(process.env.DATABASE_URL);
+//console.log("dialeto", process.env.DATABASE);
 module.exports = {
     dialect: process.env.DIALECT, //Inserir o banco de dados que está utilizando (mysql, postgres, etc);
     host: process.env.HOST, //Qual servidor está utilizando (Normalmente é o localhost);
