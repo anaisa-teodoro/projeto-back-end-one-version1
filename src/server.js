@@ -1,6 +1,6 @@
 // dependencias
-const express = require("express");
-const cors = require("cors");
+const express = require("express"); //Framework da aplicação
+const cors = require("cors"); // Biblioteca utilizada para inserir os headers do http
 const { config } = require("dotenv");
 const morgan = require("morgan");
 config();
@@ -19,7 +19,7 @@ class Server {
   }
   // connect database
   async database() {
-    const connection = require("../database/connection");
+    const connection = require("../database/connection");// Configuração de acesso ao BD
     try {
       await connection.authenticate();
       console.log("Conexão com o banco de dados estabelecida com sucesso!");
@@ -40,4 +40,4 @@ class Server {
 
 }
 
-module.exports = { Server };
+module.exports = { Server }; //Expostação da Classe Server

@@ -10,13 +10,10 @@ async function validarBody(body) {
   const {
     nome_localidade,
     descricao, 
-    tipo,
-    preco_unitario,
+    tipo    
   } = body;
   if (
-    !nome_localidade ||
-    !tipo ||
-    !preco_unitario
+    !nome_localidade || !tipo || !descricao
   ) {
     return false;
   }
@@ -27,7 +24,6 @@ async function filtroPlataforma(body) {
   const {
     nome_localidade,
     tipo,
-    preco_unitario,
     descricao,
   } = body;
   // criamos um objeto vazio
@@ -39,9 +35,6 @@ async function filtroPlataforma(body) {
 
   if (tipo) {
     novos_dados.tipo = tipo;
-  }
-  if (preco_unitario) {
-    novos_dados.preco_unitario = preco_unitario;
   }
   if (descricao) {
     novos_dados.descricao = descricao;
@@ -132,14 +125,10 @@ async function salvarLocalidade(body, quantidade, usuario_id, req, res) {
 async function filtroUpdate(body) {
 
   const {
-    descricao, preco_unitario, quantidade
+    descricao, quantidade
   } = body;
 
   const novos_dados = {};
-
-  if (preco_unitario) {
-    novos_dados.preco_unitario = preco_unitario;
-  }
 
   if (descricao) {
     novos_dados.descricao = descricao;

@@ -43,8 +43,7 @@ async function filtroPlataforma(body, id) {
 async function filtroUpdate(body) {
   const camposPermitidos = [
     "nome_local",
-    "descricao",    
-    "celular",
+    "descricao",      
     "cep",
     "logradouro",
     "numero",

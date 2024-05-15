@@ -1,7 +1,7 @@
 
 
 const locaisRoutes = require("express").Router();
-const {plataforma, update, index, indexId,update,status,deleteId,indexMaps} = require('../controllers/locais.controllers');
+const {plataforma, index, indexId,update,status,deleteId,indexMaps} = require('../controllers/locais.controllers');
 const { validarToken } = require("../middlewares/auth");
 
 //endpoints protegidos por token

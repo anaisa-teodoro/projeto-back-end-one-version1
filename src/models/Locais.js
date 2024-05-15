@@ -3,7 +3,7 @@ const connection = require("../database/connection");
 const { validaEmail } = require("../libs/validators")
 const Localidades = require("./Localidades");
 const LocalidadeLocal = require("./LocalidadeLocal");
-const Usuarios = require("./Usuarios");
+const Usuarios = require("./Usuario");
 
 const Locais = connection.define(
   "locais",
@@ -34,15 +34,6 @@ const Locais = connection.define(
       allowNull: false,
       validate: {
         validaEmail,
-      },
-    },
-      celular: {
-      type: Sequelize.STRING,
-      validate: {
-        isNumeric: {
-          args: true,
-          msg: "O celular deve conter apenas números e não deve conter pontos ou traços",
-        },
       },
     },
     cep: { type: Sequelize.STRING},

@@ -10,7 +10,7 @@ module.exports = {
         local_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
-          references: { model: "local", key: "id" },
+          references: { model: "locais", key: "id" },
         },
         localidade_id: {
           type: Sequelize.INTEGER,

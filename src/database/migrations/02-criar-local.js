@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable(
-      "local",
+      "locais",
       {
         id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
         usuario_id: {
@@ -48,6 +48,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("local");
+    await queryInterface.dropTable("locais");
   },
 };

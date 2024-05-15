@@ -1,4 +1,4 @@
-const { usuarioEstaAtivo } = require("../libs/validators");
+const { usuarioEstaAtivo } = require("../libs/validators")
 const { validarBody, salvarLocalidade, atualizarLocalidade, listarLocalidades, listarLocalidadesId, deletarLocalidade } = require("../libs/localidades.lib");
 
 async function plataforma(req, res) {
@@ -36,8 +36,8 @@ async function update(req, res) {
   try {
     // validar que usuário este ativo na bd pode ter sido desativado por um admin e ter um token valido ainda
     await usuarioEstaAtivo(usuario_id, res);
-    //verificar que quantidade e body.preco_unitario sejam numeros, que a descricao nao seja um numero e que o body nao esteja vazio
-    if ((Object.keys(body).length === 0) || (quantidade && isNaN(quantidade)) || (body.preco_unitario && isNaN(body.preco_unitario)) || (body.descricao && !isNaN(body.descricao))) {
+    //verificar que quantidade e sejam numeros, que a descricao nao seja um numero e que o body nao esteja vazio
+    if ((Object.keys(body).length === 0) || (quantidade && isNaN(quantidade)) || (body.descricao && !isNaN(body.descricao))) {
       res.status(400);
       throw new Error("Requisição com dados inválidos");
     }
