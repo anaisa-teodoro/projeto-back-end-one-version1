@@ -19,7 +19,7 @@ class Server {
   }
   // connect database
   async database() {
-    const connection = require("../database/connection");// Configuração de acesso ao BD
+    const connection = require("./database/connection");// Configuração de acesso ao BD
     try {
       await connection.authenticate();
       console.log("Conexão com o banco de dados estabelecida com sucesso!");
