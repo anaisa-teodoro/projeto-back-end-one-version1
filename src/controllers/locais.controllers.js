@@ -34,10 +34,10 @@ module.exports = {
         res.status(409);
         throw new Error("Email já cadastrado");
       }
-      //nome fantasia esta na db ?
+      //nome está na db ?
       if (await estaNaBD(Locais, "nome_local", body.nome_local)) {
         res.status(409);
-        throw new Error("Nome Fantasia já cadastrado");
+        throw new Error("Nome já cadastrado");
       }
 
 
@@ -53,9 +53,9 @@ module.exports = {
     const id = req.params.id;
     const usuario_id = req.payload.id;
     try {
-      //verificar se o usuario que esta requisitando  esta com status ativo
+      //verificar se o usuário que esta requisitando  esta com status ativo
       await usuarioEstaAtivo(usuario_id, res);
-      //verificar se o id passado por parâmetro  e numérico
+      //verificar se o id passado por parâmetro é número
       if (isNaN(id)) {
         res.status(400);
         throw new Error(
@@ -102,7 +102,7 @@ module.exports = {
       await usuarioEstaAtivo(usuario_id, res);
 
       if (isNaN(id)) {
-        //verificar se o id passado por parâmetro  e numérico
+        //verificar se o id passado por parâmetro  e número
         res.status(400);
         throw new Error(
           "Id passado por parâmetro obrigatoriamente deve ser numérico"
@@ -132,7 +132,7 @@ module.exports = {
       //verificar se o status passado por parâmetro  e válido
       if (status && !["ativo", "inativo"].includes(status.toLowerCase())) {
         res.status(400);
-        throw new Error("Status na query params inválido ");
+        throw new Error("Status na query params inválido!");
 
       }
 
@@ -214,7 +214,7 @@ module.exports = {
       if (isNaN(id)) {
         res.status(400);
         throw new Error(
-          "Id passado por parâmetro obrigatoriamente deve ser numérico"
+          "Id passado por parâmetro obrigatoriamente deve ser numérico!"
         );
       }
       // Verificar se o local existe na base de dados

@@ -14,7 +14,7 @@ async function validaSenha(senha) {
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!regex.test(email)) {
       throw new Error(
-        "Email incorreto, verificar se e um e-mail valido, ex: name@example.com"
+        "Email incorreto, verificar se e um e-mail válido, ex: nome@example.com"
       );
     }
     return regex.test(email);
@@ -29,11 +29,11 @@ async function validaSenha(senha) {
     return achado ? true : false;
   }
   async function usuarioEstaAtivo(usuario_id, res) {
-    const Usuarios = require("../models/Usuarios");
+    const Usuarios = require("../models/Usuario");
     const usuario = await Usuarios.findByPk(usuario_id);
     if (usuario.status !== "ativo") {
       res.status(401);
-      throw new Error("Usuário não autorizado");
+      throw new Error("Usuário não autorizado!");
     }
     return true;
   }

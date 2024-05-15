@@ -13,8 +13,6 @@ async function filtroPlataforma(body, id) {
     "cpf",
     "nome_local",
     "email",
-    "telefone",
-    "celular",
     "cep",
     "logradouro",
     "numero",
@@ -45,8 +43,7 @@ async function filtroPlataforma(body, id) {
 async function filtroUpdate(body) {
   const camposPermitidos = [
     "nome_local",
-    "descricao",
-    "telefone",
+    "descricao",    
     "celular",
     "cep",
     "logradouro",
@@ -65,7 +62,7 @@ async function filtroUpdate(body) {
   });
 
   if (Object.keys(novos_dados).length === 0) {
-    throw new Error("Nenhum dado válido para atualizar");
+    throw new Error("Nenhum dado válido para atualizar!");
   }
 
   return novos_dados;

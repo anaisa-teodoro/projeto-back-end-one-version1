@@ -5,9 +5,11 @@ const { plataforma, update, index , indexId, deleteId} = require("../controllers
 //endpoints protegidos com token
 
 localidadesRoutes.post("/api/localidades", validarToken, plataforma);
-localidadesRoutes.patch("/api/localidades/:id", validarToken, update)
+localidadesRoutes.put("/api/localidades/:id", validarToken, update)
 localidadesRoutes.get("/api/localidades/", validarToken, index);
 localidadesRoutes.get("/api/localidades/:id", validarToken, indexId);
 localidadesRoutes.delete("/api/localidades/:id", validarToken, deleteId);
+
+
 
 module.exports = localidadesRoutes;

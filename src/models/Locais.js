@@ -1,12 +1,12 @@
 const Sequelize = require("sequelize");
-const connection = require("./database/connection");
-const { validaEmail } = require("./libs/validators")
+const connection = require("../database/connection");
+const { validaEmail } = require("../libs/validators")
 const Localidades = require("./Localidades");
 const LocalidadeLocal = require("./LocalidadeLocal");
 const Usuarios = require("./Usuarios");
 
 const Locais = connection.define(
-  "local",
+  "locais",
   {
     usuario_id: {
       type: Sequelize.INTEGER,
@@ -36,16 +36,7 @@ const Locais = connection.define(
         validaEmail,
       },
     },
-    telefone: {
-      type: Sequelize.STRING,
-      validate: {
-        isNumeric: {
-          args: true,
-          msg: "O telefone deve conter apenas números e não deve conter pontos ou traços",
-        },
-      },
-    },
-    celular: {
+      celular: {
       type: Sequelize.STRING,
       validate: {
         isNumeric: {

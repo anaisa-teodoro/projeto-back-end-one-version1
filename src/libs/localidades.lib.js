@@ -1,6 +1,6 @@
 const Localidades = require("../models/Localidades");
 const LocalidadeLocal = require("../models/LocalidadeLocal");
-const Locals = require("../models/Locals");
+const Locals = require("../models/Locais");
 const Usuario = require("../models/Usuario");
 const UsuarioLocalidade = require("../models/UsuarioLocalidade");
 
@@ -9,17 +9,12 @@ const { estaNaBD } = require("../libs/validators");
 async function validarBody(body) {
   const {
     nome_localidade,
-    descricao,
-    dosagem,
-    unidade_dosagem,
+    descricao, 
     tipo,
     preco_unitario,
   } = body;
   if (
     !nome_localidade ||
-    !nome_localidade||
-    !dosagem ||
-    !unidade_dosagem ||
     !tipo ||
     !preco_unitario
   ) {
@@ -31,9 +26,6 @@ async function filtroPlataforma(body) {
   // so destruturamos os campos que queremos permitir atualizar
   const {
     nome_localidade,
-    nome_laboratorio,
-    dosagem,
-    unidade_dosagem,
     tipo,
     preco_unitario,
     descricao,
@@ -44,15 +36,7 @@ async function filtroPlataforma(body) {
   if (nome_localidade) {
     novos_dados.nome_localidade = nome_localidade;
   }
-  if (nome_laboratorio) {
-    novos_dados.nome_localidade= nome_laboratorio;
-  }
-  if (dosagem) {
-    novos_dados.dosagem = dosagem;
-  }
-  if (unidade_dosagem) {
-    novos_dados.unidade_dosagem = unidade_dosagem;
-  }
+
   if (tipo) {
     novos_dados.tipo = tipo;
   }
@@ -223,7 +207,7 @@ async function listarLocalidades(req, res) {
   const buscar = tipo_params.toLowerCase();
   //verificamos se o tipo de localidade é valido
   if (buscar != "controlado" && buscar != "naocontrolado") {
-    throw new Error("Tipo de localidade invalido, tente controlado ou naocontrolado");
+    throw new Error("Tipo de localidade inválido, tente controlado ou não controlado");
   }
   //se o tipo de localidade for controlado listamos os localidades controlados
   if (buscar == "controlado") {

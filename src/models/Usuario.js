@@ -36,21 +36,6 @@ const Usuarios = connection.define(
         },
       },
     },
-
-    telefone: {
-      type: Sequelize.STRING,
-      allowNull: true,
-      validate: {
-        len: {
-          args: [10, 15],
-          msg: "O telefone deve ter entre 10 e 15 caracteres",
-        },
-        isNumeric: {
-          args: true,
-          msg: "O telefone deve conter apenas números",
-        },
-      },
-    },
     email: {
       type: Sequelize.STRING,
       allowNull: false,

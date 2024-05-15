@@ -2,7 +2,10 @@
 
 ### Configurações iniciais:
   - Git; 
-  - NodeJS;
+  - IDE de sua preferência;
+  - Javascript foco em NodeJS
+  - Postgre;
+  - Gerenciador de banco de dados de sua preferência;
 
 ### Ambiente de desenvolvimento e execução:
 
@@ -58,25 +61,49 @@ npm install configure-env --save-dev
 
 ### Endpoints de Usuário
 
-| Usuário                                       | Método |
-| --------------------------------------------- | ------ |
-| `/api/usuarios`                               | POST   |
-| `/api/usuarios/login`                         | POST   |
-| `/api/usuarios/:id`                           | PATCH  |
-| `/api/usuarios/:id/status`                    | PATCH  |
-| `/api/usuarios/:id/senha`                     | PATCH  |
-| `/api/usuarios/:id`                           | GET    |
+#### Endpoints Públicos
 
-# Endpoints Local
+| Endereço                             | Verbo | Descrição                   |
+| ------------------------------------ | ----- | --------------------------- |
+| `/api/usuario`                       | POST  | Criar um novo usuário       |
+| `/api/usuarios/login`                | POST  | Login do usuário            |
 
-| Endereço                                         | Método |
-| ------------------------------------------------ | ------ |
-| `/api/locais`                                     | POST   |
-| `/api/locais/:id`                                 | PATCH  |
-| `/api/locais/:id/status`                          | PATCH  |
-| `/api/locais/?status=ativo/inativo`               | GET    |
-| `/api/locais/:locais_id`                           | GET    |
-| `/api/locais/:locais_id`                           | DELETE |
+#### Endpoints Protegidos por Validação de Token
+
+| Endereço                             | Verbo | Descrição                             |
+| ------------------------------------ | ----- | ------------------------------------- |
+| `/api/usuarios/:id`                  | PUT   | Atualizar informações do usuário por ID |
+| `/api/usuarios/:id/status`           | PUT   | Atualizar status do usuário por ID       |
+| `/api/usuarios/:id/senha`            | PUT   | Atualizar senha do usuário por ID       |
+| `/api/usuarios/:id`                  | GET   | Obter informações do usuário por ID      |
+
+
+### Endpoints Local
+
+### Endpoints Protegidos por Token
+
+| Endereço                                | Verbo | Descrição             |
+| --------------------------------------- | ----- | --------------------- |
+| `/api/local`                            | POST  | Adicionar local       |
+| `/api/local`                            | GET   | Obter todos os locais |
+| `/api/local/:local_id`                  | GET   | Obter local por ID    |
+| `/api/local/:local_id`                  | PUT   | Atualizar local por ID|
+| `/api/local/:id/status`                 | PUT   | Atualizar status do local |
+| `/api/local/:local_id`                  | DELETE| Excluir local por ID  |
+| `/api/local/:local_id/maps`             | GET   | Obter mapas do local por ID|
+
+
+### Endpoints Protegidos com Token
+
+| Endereço                                 | Verbo | Descrição                      |
+| ---------------------------------------- | ----- | ------------------------------ |
+| `/api/localidades`                       | POST  | Adicionar localidade           |
+| `/api/localidades/:id`                   | PUT   | Atualizar localidade por ID    |
+| `/api/localidades/`                      | GET   | Obter todas as localidades     |
+| `/api/localidades/:id`                   | GET   | Obter localidade por ID        |
+| `/api/localidades/:id`                   | DELETE| Excluir localidade por ID      |
+
+
 
 ---
 Feito com carinho e muito aprendizado :)

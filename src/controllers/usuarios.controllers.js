@@ -70,7 +70,7 @@ module.exports = {
         res.status(401);
         throw new Error("Sem permissão para atualizar este usuário");
       }
-      //apenas atualizar os dados que forem enviados e so permitir atualizar nome, sexo e telefone
+      //apenas atualizar os dados que forem enviados e so permitir atualizar nome, sexo
       const { nome, sexo} = body;
       const novosDados = {};
       if (nome) novosDados.nome = nome;     
