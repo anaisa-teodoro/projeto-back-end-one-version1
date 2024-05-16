@@ -32,6 +32,8 @@ class Server {
     app.use(express.json());
     app.use(rotas);
   }
+
+  
   // start server
   async initializeServer(app) {
     const PORT = process.env.NODE_PORT || 3000;

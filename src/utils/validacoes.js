@@ -47,9 +47,11 @@ function validarTipoUsuario(tipoUsuario) {
 }
 
 module.exports = {
+  validarErros,
   validarNome,
-  validarEmailESenha,
+  validarEmail,
   validarErros,
   validarCPF,
   validarSenha,
+  validarTipoUsuario
 };

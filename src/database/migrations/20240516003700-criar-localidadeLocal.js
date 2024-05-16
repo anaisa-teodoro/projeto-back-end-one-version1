@@ -1,21 +1,21 @@
-"use strict";
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up (queryInterface, Sequelize) {
     await queryInterface.createTable(
-      "localidade_local",
+      'localidade_local',
       {
         quantidade: { type: Sequelize.INTEGER, allowNull: false },
         local_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
-          references: { model: "locais", key: "id" },
+          references: { model: 'locais', key: 'id' },
         },
         localidade_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
-          references: { model: "localidade", key: "id" },
+          references: { model: 'localidade', key: 'id' },
         },
         created_at: {
           type: Sequelize.DATE,
@@ -38,7 +38,7 @@ module.exports = {
     );
   },
 
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("localidade_local");
+  async down (queryInterface, Sequelize) {
+    await queryInterface.dropTable('localidade_local');
   },
 };
