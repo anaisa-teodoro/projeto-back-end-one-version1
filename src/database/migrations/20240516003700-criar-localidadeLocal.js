@@ -12,9 +12,14 @@ module.exports = {
           allowNull: false,
           references: { model: 'locais', key: 'id' },
         },
+        local_id: {
+          type: Sequelize.INTEGER,
+          allowNull: true,
+          references: { model: 'local', key: 'id' },
+        },
         localidade_id: {
           type: Sequelize.INTEGER,
-          allowNull: false,
+          allowNull: true,
           references: { model: 'localidade', key: 'id' },
         },
         created_at: {

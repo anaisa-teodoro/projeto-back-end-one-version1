@@ -14,16 +14,6 @@ const Localidades = connection.define(
         },
       },
     },
-    recomend: {
-      type: Sequelize.BOOLEAN,
-      allowNull: false,
-      defaultValue: false,
-      validate: {
-        isTrue: {
-          msg: "Recomendação deve ser verdadeira ou falsa",
-        },
-      },
-    },
     descricao: {
       type: Sequelize.STRING,
       allowNull: false,

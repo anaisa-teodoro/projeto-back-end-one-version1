@@ -100,9 +100,9 @@ npm install configure-env --save-dev
 
 Para gerenciar todas as migrações de dados, você pode usar(seeders que deixam um padrão de preenchimento das tabelas. Eles podem ser usadas para preencher as tabelas do banco de dados com dados de amostra ou de teste:
 
- ` npx sequelize seed:generate --name test `
+ `npx sequelize seed:generate --name test `
 
- Atualizar os seedrs
+ Atualizar os seeders
 `npx sequelize-cli db:seed:undo:all`
  
  

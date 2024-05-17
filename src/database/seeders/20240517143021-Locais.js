@@ -2,75 +2,54 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
       "locais",
       [
         {
-          usuario_id: 1,
+          usuario_id: 5,
           nome_local: "Local 1",
-          email: "local1@dominio.com",
+          localidade: "São Paulo",
           cep: "12345-678",
-          logradouro: "Rua Exemplo, 123",
-          numero: "123",
-          bairro: "Bairro Exemplo",
-          cidade: "Cidade Exemplo",
-          estado: "Estado Exemplo",
-          complemento: "Complemento Exemplo",
-          lat: "-27.6019",
-          lon: "-48.4703",
+          endereco: "Rua Exemplo, 123",
+          latitude: "-27.6019",
+          longitude: "-48.4703",
           status: "ativo",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          usuario_id: 2,
+          usuario_id: 6,
           nome_local: "Local 2",
-          email: "local2@dominio.com",
-          cep: "54321-876",
-          logradouro: "Avenida Exemplo, 456",
-          numero: "456",
-          bairro: "Outro Bairro",
-          cidade: "Outra Cidade",
-          estado: "Outro Estado",
-          complemento: "Outro Complemento",
-          lat: "-27.6020",
-          lon: "-48.4704",
+          localidade: "São Paulo2",
+          cep: "12345-679",
+          endereco: "Rua Exemplo 2, 123",
+          latitude: "-27.6018",
+          longitude: "-48.4705",
           status: "ativo",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-        usuario_id: 3,
-        nome_local: "Local 3",
-        email: "local2@dominio.com",
-        cep: "54321-873",
-        logradouro: "Avenida Exemplo, 457",
-        numero: "457",
-        bairro: "Outro Bairro III",
-        cidade: "Outra Cidade III",
-        estado: "Outro Estado III",
-        complemento: "Outro Complemento",
-        lat: "-27.6045",
-        lon: "-48.4745",
-        status: "ativo",
-        created_at: new Date(),
-        updated_at: new Date(),
-        },
-
+          usuario_id: 7,
+          nome_local: "Local 3",
+          localidade: "São Paulo 3",
+          cep: "12345-676",
+          endereco: "Rua Exemplo, 124",
+          latitude: "-27.6015",
+          longitude: "-48.4703",
+          status: "ativo",
+          created_at: new Date(),
+          updated_at: new Date(),
+        }
       ],
       {}
-    
+
     );
-    
+
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  async down(queryInterface, Sequelize) {
+
   }
 };

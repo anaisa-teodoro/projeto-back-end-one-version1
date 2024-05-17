@@ -10,7 +10,17 @@ module.exports = {
         type: Sequelize.STRING(20),
         allowNull: false,
         unique: true,
-      },       
+      }, 
+      
+        nome_localidade:{
+          type: Sequelize.STRING(20),
+          allowNull: false,      
+        },
+         
+      descricao: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },      
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

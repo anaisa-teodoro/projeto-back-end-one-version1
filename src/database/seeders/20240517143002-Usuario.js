@@ -2,56 +2,52 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
       "usuario",
       [
         {
-          nome_completo : 'Eterna Java',
+          nome_completo: 'Java',
           sexo: 'Feminino',
-          cpf : '122454945454',
-          email : 'devz@dev.com',
-          senha : 'DevFuturo@25',
-          endereco : 'Rua porta 3333',    
-          status: 'ativo', 
-          data_nascimento: '2023-15-20',
-          created_at: new Date(),
-          updated_at: new Date(),
-
-        },
-        {
-          nome_completo: "Nome1 Sobrenome1",
-          endereco: 'Rua porta 3353',
-          sexo: "Masculino",
-          cpf: "11111111111",
-          email: "usuario1@dominio.com",
-          senha: "DevFuturo@26",
-          data_nascimento: "2000-01-01",
-          status: "ativo",
+          cpf: '123456729',
+          email: 'devz@dev.com',
+          senha: 'DevFuturo@25',
+          endereco: 'Rua porta 3333',
+          status: 'ativo',
+          data_nascimento: '2023-12-20',
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          nome_completo: "Nome2 Sobrenome2",
-          endereco: 'Rua porta 3343',
-          sexo: "Feminino",
-          cpf: "22222222222",
-          email: "usuario2@dominio.com",
-          senha: "Futuro@26",
-          data_nascimento: "1995-02-15",
-          status: "ativo",
+          nome_completo: 'Java2',
+          sexo: 'Feminino',
+          cpf: '123456788',
+          email: 'deva@dev.com',
+          senha: 'DevFuturo@26',
+          endereco: 'Rua porta 3334',
+          status: 'ativo',
+          data_nascimento: '2023-12-23',
           created_at: new Date(),
           updated_at: new Date(),
         },
-        
+        {
+          nome_completo: 'Java3',
+          sexo: 'Feminino',
+          cpf: '1234561288',
+          email: 'devi@dev.com',
+          senha: 'DevFuturo@16',
+          endereco: 'Rua porta 1234',
+          status: 'ativo',
+          data_nascimento: '2023-12-22',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
       ],
       {}
     );
   },
 
-  async down (queryInterface, Sequelize) {
-         await queryInterface.bulkDelete("usuario", null, {});
-    }
-  };
-  
-
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete("usuario", null, {});
+  }
+};
