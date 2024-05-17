@@ -1,5 +1,18 @@
 # Módulo I - Projeto Back-end - API Rest Natureza365
 
+### Natureza365 - Floripa Natural Trails
+
+A **API REST da Natureza365** é uma interface de programação de aplicações que adere aos princípios da arquitetura REST (Representational State Transfer), permitindo a comunicação eficiente e escalável com serviços web. Esta API fornece acesso a uma vasta gama de informações sobre áreas naturais, trilhas, parques ecológicos, reservas ambientais e outros locais de interesse para os amantes da natureza.
+
+Com a API da Natureza365, os desenvolvedores podem criar aplicações que permitem aos usuários:
+
+* Cadastrar novos perfis de usuário;
+* Gerenciar locais, incluindo listagem, edição e exclusão;
+* Acessar informações detalhadas sobre esses locais;
+
+O objetivo desse projeto foi desenvolver um MVP (Minimum Viable Product) para o Back-End da aplicação, utilizando as tecnologias Node, Express e PostgreSQL. Isso permitirá uma implementação ágil e preparando o projeto para futuras expansões e melhorias.
+
+
 ### Configurações:
 
 ### Pré-configurações
@@ -150,6 +163,11 @@ Para gerenciar todas as migrações de dados, você pode usar(seeders que deixam
 | `/api/localidades/:id` | GET    | Obter localidade por ID     |
 | `/api/localidades/:id` | DELETE | Excluir localidade por ID   |
 
+- Organização do Ttabalho:
+
+
+[Link do Trello](https://trello.com/invite/b/PXvepNMQ/ATTI70254cc8d317361e30b98ddc44f43c671CB78012/natureza365-floripa-natural-trails)
+
 ---
 
-Feito com carinho e muito aprendizado :)
+Feito com carinho e muito aprendizado nas aulas! 
