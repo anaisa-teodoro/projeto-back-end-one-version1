@@ -1,28 +1,37 @@
 const express = require('express');
-const fetch = require('node-fetch');
+const app = express();
 
 // Middleware para analisar o corpo das requisições como JSON
 app.use(express.json());
+
 // Rota para lidar com requisições POST
-app.post('/locais/map', handlePostRequest);
+app.post('/locais/maps', handlePostRequest);
 
 // Constante para o URL base da API do OpenStreetMap
 const OPENSTREETMAP_API_URL = 'https://nominatim.openstreetmap.org';
 
-// Função para obter o nome do local a partir de latitude e longitude
-async function getLocalName(lat, lon) {
-    try {
-        const response = await fetch(`${OPENSTREETMAP_API_URL}/reverse?lat=${lat}&lon=${lon}&format=json`);
-        const data = await response.json();
-        return data.display_name;
-    } catch (error) {
-        console.error('Erro ao consultar o local:', error);
-        throw new Error('Erro ao consultar o local');
+async function loadFetch() {
+    return import('node-fetch').then(mod => mod.default);
+}
+
+module.exports = {
+    // Função para obter o nome do local a partir de latitude e longitude
+    async getLocalName(lat, lon) {
+        const fetch = await loadFetch();
+        try {
+            const response = await fetch(`${OPENSTREETMAP_API_URL}/reverse?lat=${lat}&lon=${lon}&format=json`);
+            const data = await response.json();
+            return data.display_name;
+        } catch (error) {
+            console.error('Erro ao consultar o local:', error);
+            throw new Error('Erro ao consultar o local');
+        }
     }
 }
 
 // Função para buscar informações de endereço a partir de uma consulta
 async function getAddressInfo(query) {
+    const fetch = await loadFetch();
     try {
         const response = await fetch(`${OPENSTREETMAP_API_URL}/search?q=${query}&format=json`);
         const data = await response.json();
@@ -56,7 +65,7 @@ async function handlePostRequest(req, res) {
     try {
         let address;
         if (lat && lon) {
-            address = await getLocalName(lat, lon);
+            address = await module.exports.getLocalName(lat, lon);
         } else if (query) {
             address = await getAddressInfo(query);
         } else {
@@ -68,6 +77,3 @@ async function handlePostRequest(req, res) {
         res.status(500).json({ error: 'Erro ao processar a solicitação' });
     }
 }
-
-
-

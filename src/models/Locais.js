@@ -14,20 +14,7 @@ const Locais = connection.define(
     nome_local: {
       type: Sequelize.STRING,
     },
-    cpf: {
-      type: Sequelize.STRING,
-      validate: {
-        len: {
-          args: [14, 14],
-          msg: "O CPF deve ter 14 caracteres",
-        },
-        isNumeric: {
-          args: true,
-          msg: "O CPF deve conter apenas números e não deve conter pontos ou traços",
-        },
-
-      },
-    },
+    
      
     email: {
       type: Sequelize.STRING,

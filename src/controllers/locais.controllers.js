@@ -6,6 +6,7 @@ const {
   filtroPlataforma,
 } = require("../libs/locais.lib");
 const { estaNaBD, usuarioEstaAtivo } = require("../libs/validators");
+const {getLocalName} = require("../service/map");
 
 module.exports = {
   async plataforma(req, res) {
@@ -24,16 +25,7 @@ module.exports = {
         res.status(400);
         throw new Error("Requisição com dados inválidos");
       }
-      //cpf esta na db ?
-      if (await estaNaBD(Locais, "cpf", body.cpf)) {
-        res.status(409);
-        throw new Error("CPF já cadastrado");
-      }
-      //email esta na db ?
-      if (await estaNaBD(Locais, "email", body.email)) {
-        res.status(409);
-        throw new Error("Email já cadastrado");
-      }
+
       //nome está na db ?
       if (await estaNaBD(Locais, "nome_local", body.nome_local)) {
         res.status(409);
@@ -178,7 +170,6 @@ module.exports = {
           "id",
           "status",
           "nome_local",
-          "cpf",
           "email",    
           "cep",
           "estado",
@@ -246,4 +237,22 @@ module.exports = {
       return res.json(error.message);
     }
   },
+  async indexMaps (req, res) {
+    const id = req.params.local_id;
+    const local = await Locais.findByPk(id, {
+      include: {
+        association: "localidades",
+      },
+    });
+    if (!local) {
+      res.status(404);
+      throw new Error("Local não encontrado");
+    };
+
+    const {latitude, longitude} = local;
+    const localName = await getLocalName(latitude, longitude);
+    console.log(localName);
+
+    return res.send(localName);
+  }
 };

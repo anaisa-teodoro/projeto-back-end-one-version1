@@ -2,7 +2,7 @@ const { sign } = require("jsonwebtoken");
 
 async function validarBody(body) {
   const {
-    nome,  
+    nome_completo,  
     data_nascimento,
     cpf,
     email,
@@ -10,7 +10,7 @@ async function validarBody(body) {
   } = body;
   if (
     !email ||
-    !nome ||
+    !nome_completo ||
     !data_nascimento ||
     !cpf ||
     !senha 
@@ -23,12 +23,13 @@ async function validarBody(body) {
 
 async function filtroPlataforma(body) {
   const {
-    nome,  
+    nome_completo,  
     sexo,
     data_nascimento,
     cpf,  
     email,
     senha,
+    endereco,
   } = body;
   const novos_dados = {};
   if (sexo) {
@@ -37,14 +38,17 @@ async function filtroPlataforma(body) {
   if (email) {
     novos_dados.email = email;
   }
-  if (nome) {
-    novos_dados.nome = nome;
+  if (nome_completo) {
+    novos_dados.nome_completo = nome_completo;
   }
   if (data_nascimento) {
     novos_dados.data_nascimento = data_nascimento;
   }
   if (cpf) {
     novos_dados.cpf = cpf;
+  }
+  if (endereco) {
+    novos_dados.endereco = endereco;
   }
   if (senha) {
     novos_dados.senha = senha;

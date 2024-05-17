@@ -5,14 +5,14 @@ const Localidades = require("./Localidades");
 const UsuarioLocalidade= require("./UsuarioLocalidade");
 
 const Usuarios = connection.define(
-  "usuarios",
+  "usuario",
   {
-    nome: {
+    nome_completo: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
         len: {
-          args: [2, 20],
+          args: [2, 30],
           msg: "O nome deve ter entre 3 e 30 caracteres",
         },
       },

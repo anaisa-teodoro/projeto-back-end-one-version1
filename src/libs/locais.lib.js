@@ -10,16 +10,8 @@ async function validarBody(body) {
 async function filtroPlataforma(body, id) {
   const camposPermitidos = [
     "nome_local",
-    "cpf",
-    "nome_local",
-    "email",
     "cep",
-    "logradouro",
-    "numero",
-    "bairro",
-    "cidade",
-    "estado",
-    "complemento",
+    "endereco",
     "latitude",
     "longitude",
     "status",

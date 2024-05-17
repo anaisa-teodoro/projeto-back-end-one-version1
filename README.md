@@ -56,8 +56,8 @@ npm install configure-env --save-dev
 
 ### Criar uma migration
 
-6. `sequelize migration:generate --name nome_da_migracao`
-7. `npx sequelize-cli migration:generate --name criar_tabela_alunos`
+6. `sequelize migration:generate --name `
+7. `npx sequelize-cli migration:generate --name `
 
 ### Rodar uma migration. Opções:
 
