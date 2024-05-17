@@ -27,13 +27,18 @@ Linux | Windows
 
 `nvm use 21`ou`nvm install 21`
 
+🔎 Dica: configuração do Node.js no Windows:  [Configurar o NodeJS no Windows nativo](https://learn.microsoft.com/pt-br/windows/dev-environment/javascript/nodejs-on-windows). 
+
+Esse artigo aborda a instalação do NVM-Windows, que é uma maneira popular de instalar várias versões do Node.js no Windows. Vale a pena conferir! 😊
+
 ### Configurando o Ambiente .env
 
 - Para facilitar a configuração do ambiente, você pode usar o script `configure-env`, que lê um arquivo `.env.example`. Depois, gera um arquivo .env a partir desses valores.
 
 - Ou criar manualmente um arquivo `.env`.
   Você pode instalar via CLI por meio nomde outro gerenciador de pacotes.
-  O ideal é instalá-lo como uma dependência de desenvolvimento em vez de global:
+  O ideal é instalá-lo como uma dependência de desenvolvimento em vez de global. Insiras as informções nesse arquivo as variaveis de ambiente de desenvolvimento como:database, host,usernamed,passworddb,etc;.
+
 
 ### Instal as dev dependências
 
@@ -46,6 +51,8 @@ npm install configure-env --save-dev
 1. `npm install`
 2. Se for em ambiente local: `npm install --dev`
 3. `cp .env_example .env`
+
+### Criação do Banco de Dados
 4. `npm run db:create`
 
 ### Para rodar o repositório em ambiente local
@@ -76,6 +83,10 @@ npm install configure-env --save-dev
 12. `sequelize db:seed:all`
 13. `npx sequelize db:seed:all`
 
+### Criação de seedrs
+ 
+ ` npx sequelize seed:generate --name `
+ 
 ### Endpoints de Usuário
 
 #### Endpoints Públicos
@@ -87,15 +98,17 @@ npm install configure-env --save-dev
 
 
 - Criar um novo usuário
-```{
-  "nome": "Eterna Aprendiz Js",
-  "sexo": "Feminino",
-  "cpf": "12245495874",
-  "email": "eterna.aprendiz@dev.com",
-  "senha": "FuturoDev@24",
-  "endereco": "Rua do Github, porta 3000",
-  "data_nascimento": "2023-12-20"
-}
+```
+     
+    "nome_completo" : "Eterna Js",
+    "sexo": "Feminino",
+    "cpf" : "12245495874",
+    "email" : "aprendiz@dev.com",
+    "senha" : "DevFuturo@24",
+    "endereco" : "Rua porta 3000",     
+    "data_nascimento" : "2023-12-20",
+     
+
 ```
 
 #### Endpoints Protegidos por Validação de Token
