@@ -84,8 +84,14 @@ npm install configure-env --save-dev
 13. `npx sequelize db:seed:all`
 
 ### Criação de seedrs
+
+Para gerenciar todas as migrações de dados, você pode usar(seeders que deixam um padrão de preenchimento das tabelas. Eles podem ser usadas para preencher as tabelas do banco de dados com dados de amostra ou de teste:
+
+ ` npx sequelize seed:generate --name test `
+
+ Atualizar os seedrs
+`npx sequelize-cli db:seed:undo:all`
  
- ` npx sequelize seed:generate --name `
  
 ### Endpoints de Usuário
 

@@ -19,7 +19,7 @@ const Usuarios = connection.define(
     },
     endereco: {
       type: Sequelize.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     sexo: {
       type: Sequelize.STRING,

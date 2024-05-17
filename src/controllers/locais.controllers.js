@@ -135,7 +135,7 @@ module.exports = {
         where: status_pesquisado,
         include: {
           association: "usuario",
-          attributes: ["nome", "email", "status"],
+          attributes: ["nome", "status"],
         },
       });
       //  verifica se o status foi passado por query params, caso sim,
@@ -169,8 +169,7 @@ module.exports = {
         attributes: [
           "id",
           "status",
-          "nome_local",
-          "email",    
+          "nome_local",          
           "cep",
           "estado",
           "cidade",
@@ -183,7 +182,7 @@ module.exports = {
         ],
         include: {
           association: "usuario",
-          attributes: ["nome", "email", "status"],
+          attributes: ["nome", "status"],
         },
       });
       if (!local) {

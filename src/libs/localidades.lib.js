@@ -1,7 +1,7 @@
 const Localidades = require("../models/Localidades");
 const LocalidadeLocal = require("../models/LocalidadeLocal");
 const Locals = require("../models/Locais");
-const Usuario = require("../models/Usuario");
+//const Usuario = require("../models/Usuario");
 const UsuarioLocalidade = require("../models/UsuarioLocalidade");
 
 
